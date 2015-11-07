@@ -1,0 +1,50 @@
+<script id="dropbox-plugin-config-template" type="text/x-jsrender">
+<div class="dropbox-plugin-config-cybozu">
+    <div class="block">
+        <label class="kintoneplugin-label">
+            {{>terms.shared_link_field}}<span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">
+            {{>terms.shared_link_field_desc}}
+        </div>
+        <div class="kintoneplugin-select-outer">
+            <div class="kintoneplugin-select">
+                <select class="input-text-cybozu" id="dropbox-plugin-shared-link-field">
+                    <option value="">--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <label class="kintoneplugin-label">
+            {{>terms.display_blank_space}}<span class="kintoneplugin-require">*</span>
+        </label>
+        <div class="kintoneplugin-row">
+            {{>terms.display_blank_space_desc}}
+        </div>
+        <div class="kintoneplugin-select-outer">
+            <div class="kintoneplugin-select">
+                <select class="input-text-cybozu" id="dropbox-plugin-display-space-field">
+                    <option value="">--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <label class="kintoneplugin-label">
+            {{>terms.thumbnail}}
+        </label>
+        <div class="kintoneplugin-input-checkbox">
+            <span class="kintoneplugin-input-checkbox-item">    
+                <input type="checkbox" id="dropbox-plugin-use-thumbnail" class="input-check-cybozu" checked/><label class="input-title-cybozu" for="dropbox-plugin-use-thumbnail">{{>terms.use_thumbnail}}</label>
+            </span>
+        </div>
+    </div>
+    <div class="block">
+        <button id="dropbox-plugin-submit" class="kintoneplugin-button-dialog-ok" type="button">{{>terms.submit}}</button>
+        <button id="dropbox-plugin-cancel" class="kintoneplugin-button-dialog-cancel" type="button">{{>terms.cancel}}</button>
+    </div>
+</div>
+</script>
+
+<div id="dropbox-plugin"></div>

@@ -1,0 +1,194 @@
+<div id="zendesk-plugin">
+
+    <div class='kintoneplugin-row'>
+        <div class='kintoneplugin-label'>{{html:terms.domain}}<span class='kintoneplugin-require'>*</span></div>
+        <div class='kintoneplugin-input-outer'>
+            <input id='cf_domain' class='kintoneplugin-input-text' type='text'> .zendesk.com</input>
+        </div>
+    </div>
+
+    <div class='kintoneplugin-row'>
+        <div class='kintoneplugin-label'>{{html:terms.oauth}}</div>
+        <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td><div class='kintoneplugin-title'>{{html:terms.client_name}}<span class='kintoneplugin-require'>*</span></div><td>
+                    <td>　</td>
+                    <td><div class='kintoneplugin-title'>{{html:terms.secret}}<span class='kintoneplugin-require'>*</span></div><td>
+                </tr>
+                <tr>
+                    <td><div class='kintoneplugin-input-outer'><input id='cf_client_name' class='kintoneplugin-input-text' type='text'></input></div><td>
+                    <td>　</td>
+                    <td><div class='kintoneplugin-input-outer' style='width: 300px;'><input id='cf_secret' class='kintoneplugin-input-text' type='text'></input></div><td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div class='kintoneplugin-row'>
+        <div class='kintoneplugin-label'>{{html:terms.search_condition}}<span class='kintoneplugin-require'>*</span></div>
+        <div class='kintoneplugin-desc'>{{html:terms.fetch_criteria_desc}}</div>
+        <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>{{html:terms.kintone_field}}</td>
+                    <td></td>
+                    <td>{{html:terms.zendesk}} {{html:terms.zendesk_ticket}} {{html:terms.zendesk_property}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="kintoneplugin-select">
+                            <select id='cf_search_field'>
+                                <option value=''>--</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td><span>{{html:terms.search_operator}}</span></td>
+                    <td>
+                        <div class="kintoneplugin-select">
+                            <select id='cf_search_property'>
+                                <option value='assignee'>assignee</option>
+                                <option value='requester'>requester</option>
+                                <option value='tags'>tags</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div class='kintoneplugin-row'>
+        <label class='kintoneplugin-label'>{{html:terms.filter_condition}}</label>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label class='kintoneplugin-title'>{{html:terms.zendesk_ticket}} {{html:terms.zendesk_status}}</label>
+                    </td>
+                    <td>
+                        <label class='kintoneplugin-title'> : </label>
+                    </td>
+                    <td>
+                        <div class='kintone-plugin-input-checkbox'>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_status_new' type='checkbox' name='cf_status' value='new'></input>
+                                <label for='cf_status_new'>{{html:terms.zendesk_status_new}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_status_open' type='checkbox' name='cf_status' value='open'></input>
+                                <label for='cf_status_open'>{{html:terms.zendesk_status_open}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_status_pending' type='checkbox' name='cf_status' value='pending'></input>
+                                <label for='cf_status_pending'>{{html:terms.zendesk_status_pending}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_status_hold' type='checkbox' name='cf_status' value='hold'></input>
+                                <label for='cf_status_hold'>{{html:terms.zendesk_status_hold}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_status_solved' type='checkbox' name='cf_status' value='solved'></input>
+                                <label for='cf_status_solved'>{{html:terms.zendesk_status_solved}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_status_closed' type='checkbox' name='cf_status' value='closed'></input>
+                                <label for='cf_status_closed'>{{html:terms.zendesk_status_closed}}</label>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class='kintoneplugin-title'>{{html:terms.zendesk_ticket}} {{html:terms.zendesk_ticket_type}}</label>
+                    </td>
+                    <td>
+                        <label class='kintoneplugin-title'> : </label>
+                    </td>
+                    <td>
+                        <div class='kintone-plugin-input-checkbox'>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_ticket_type_null' type='checkbox' name='cf_ticket_type' value='null'></input>
+                                <label for='cf_ticket_type_null'>{{html:terms.zendesk_ticket_type_null}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_ticket_type_question' type='checkbox' name='cf_ticket_type' value='question'></input>
+                                <label for='cf_ticket_type_question'>{{html:terms.zendesk_ticket_type_question}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_ticket_type_incident' type='checkbox' name='cf_ticket_type' value='incident'></input>
+                                <label for='cf_ticket_type_incident'>{{html:terms.zendesk_ticket_type_incident}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_ticket_type_problem' type='checkbox' name='cf_ticket_type' value='problem'></input>
+                                <label for='cf_ticket_type_problem'>{{html:terms.zendesk_ticket_type_problem}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_ticket_type_task' type='checkbox' name='cf_ticket_type' value='task'></input>
+                                <label for='cf_ticket_type_task'>{{html:terms.zendesk_ticket_type_task}}</label>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class='kintoneplugin-title'>{{html:terms.zendesk_ticket}} {{html:terms.zendesk_priority}}</label>
+                    </td>
+                    <td>
+                        <label class='kintoneplugin-title'> : </label>
+                    </td>
+                    <td>
+                        <div class='kintone-plugin-input-checkbox'>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_priority_null' type='checkbox' name='cf_priority' value='null'></input>
+                                <label for='cf_priority_null'>{{html:terms.zendesk_priority_null}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_priority_low' type='checkbox' name='cf_priority' value='low'></input>
+                                <label for='cf_priority_low'>{{html:terms.zendesk_priority_low}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_priority_normal' type='checkbox' name='cf_priority' value='normal'></input>
+                                <label for='cf_priority_normal'>{{html:terms.zendesk_priority_normal}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_priority_high' type='checkbox' name='cf_priority' value='high'></input>
+                                <label for='cf_priority_high'>{{html:terms.zendesk_priority_high}}</label>
+                            </span>
+                            <span class='kintoneplugin-input-checkbox-item kintoneplugin-input-checkbox-item-inline'>
+                                <input id='cf_priority_urgent' type='checkbox' name='cf_priority' value='urgent'></input>
+                                <label for='cf_priority_urgent'>{{html:terms.zendesk_priority_urgent}}</label>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class='kintoneplugin-row'>
+        <label class='kintoneplugin-label'>{{html:terms.result_set_display_field}}<span class='kintoneplugin-require'>*</span></label>
+        <div class='kintoneplugin-desc'>{{html:terms.result_set_desc}}</div>
+        <div class="kintoneplugin-select-outer">
+            <div class="kintoneplugin-select">
+                <select id='cf_result_set_display_field'>
+                    <option value=''>--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-submit">
+        <button id='cf_submit' class='kintoneplugin-button-dialog-ok' type='button'>
+            {{html:terms.save}}
+        </button>
+        <button id='cancel' class='kintoneplugin-button-dialog-cancel' type='button'>
+            {{html:terms.cancel}}
+        </button>
+    </div>
+
+</div>

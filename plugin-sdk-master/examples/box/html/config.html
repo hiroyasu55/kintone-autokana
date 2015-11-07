@@ -1,0 +1,66 @@
+<div id="boxPlugin-config-cybozu" class="boxPlugin-config-cybozu">
+    <div class="block">
+        <div class="kintoneplugin-label">
+            {{html:terms.folder_id}}<span class="kintoneplugin-require">*</span>
+        </div>
+        <div class="input-text-outer-cybozu">
+            <input type="text" id="folder_id" class="kintoneplugin-input-text"/>
+        </div>
+    </div>
+    <div class="block">
+        <div class="kintoneplugin-label">
+            <span id="key_fld_label">{{html:terms.key_fld}}</span><span class="kintoneplugin-require">*</span>
+        </div>
+        <div id="key_fld_description">
+            {{html:terms.key_fld_description}}
+        </div>
+        <div class="kintoneplugin-select-outer">
+            <div class="kintoneplugin-select">
+                <select id="key_fld">
+                    <option value="">--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="kintoneplugin-label">
+            <span id="box_url_label">{{html:terms.box_url}}</span><span class="kintoneplugin-require">*</span>
+        </div>
+        <div id="box_url_description">
+            {{html:terms.box_url_description}}
+        </div>
+        <div class="kintoneplugin-select-outer">
+            <div class="kintoneplugin-select">
+                <select id="box_url">
+                    <option value="">--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="kintoneplugin-label">
+            <span id="access_label">{{html:terms.access}}</span><span class="kintoneplugin-require">*</span></label>
+        </div>
+        <div class="kintoneplugin-select-outer">
+            <div class="kintoneplugin-select">
+                <select id="access">
+                    <option value="collaborators">Collaborators</option>
+                    <option value="company">Company</option>
+                    <option value="open">Open</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="prohibit_to_download_row" class="boxPlugin-prohibit-to-download" style="display:none">
+        <div class="kintoneplugin-input-checkbox">
+            <span class="kintoneplugin-input-checkbox-item">
+                <input type="checkbox" id="prohibit_to_download" class="input-check-cybozu"/><label class="kintoneplugin-label" for="prohibit_to_download">{{html:terms.prohibit_to_download}}</label>
+            </span>
+        </div>
+    </div>
+    <div class="form-submit">
+        <button id="plugin_submit" class="kintoneplugin-button-dialog-ok" type="button">{{html:terms.plugin_submit}}</button>
+        <button id="plugin_cancel" class="kintoneplugin-button-dialog-cancel" type="button">{{html:terms.plugin_cancel}}</button>
+    </div>
+</div>
+

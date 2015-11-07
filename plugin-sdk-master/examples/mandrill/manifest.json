@@ -1,0 +1,47 @@
+{
+    "manifest_version": 1,
+    "version": 1,
+    "type": "APP",
+    "name": {
+        "ja": "Mandrill plug-in",
+        "en": "Mandrill plug-in",
+        "zh": "Mandrill plug-in"
+    },
+    "description": {
+        "ja": "Mandrill can send Email.",
+        "en": "Mandrill can send Email.",
+        "zh": "Mandrill can send Email."
+    },
+    "icon": "image/image.png",
+    "homepage_url": {
+        "ja": "https://mandrill.com/",
+        "en": "https://mandrill.com/",
+        "zh": "https://mandrill.com/"
+    },
+    "desktop": {
+        "js": [
+            "https://js.kintone.com/jquery/1.11.1/jquery.min.js",
+            "https://js.kintone.com/sweetalert/v0.5.0/sweet-alert.min.js",
+            "js/mandrillMail.js"
+        ],
+        "css": [
+            "css/51-us-default.css",
+            "https://js.kintone.com/sweetalert/v0.5.0/sweet-alert.css"
+        ]
+    },
+    "config": {
+        "html": "html/mandrillConfig.html",
+        "js": [
+            "https://js.kintone.com/jquery/1.11.1/jquery.min.js",
+            "https://js.kintone.com/sweetalert/v0.5.0/sweet-alert.min.js",
+            "js/mandrillConfig.js"
+        ],
+        "css": [
+            "css/51-us-default.css",
+            "https://js.kintone.com/sweetalert/v0.5.0/sweet-alert.css",
+            "css/mandrill-design.css"
+                
+        ],
+        "required_params": ["mandrillApiKey","templateName","emailFieldCode"]
+    }
+}

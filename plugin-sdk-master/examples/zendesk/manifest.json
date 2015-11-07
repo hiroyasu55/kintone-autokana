@@ -1,0 +1,43 @@
+{
+    "manifest_version": 1,
+    "version": 5,
+    "type": "APP",
+    "name": {
+        "ja": "Zendesk for kintone",
+        "en": "Zendesk for kintone",
+        "zh": "Zendesk for kintone"
+    },
+    "description": {
+        "ja": "Zendesk is a beautifully simple customer service platform. The Zendesk for kintone plugin gives your team visibility into Zendesk tickets from within any of your kintone apps.",
+        "en": "Zendesk is a beautifully simple customer service platform. The Zendesk for kintone plugin gives your team visibility into Zendesk tickets from within any of your kintone apps.",
+        "zh": "Zendesk is a beautifully simple customer service platform. The Zendesk for kintone plugin gives your team visibility into Zendesk tickets from within any of your kintone apps."
+    },
+    "icon": "img/icon.png",
+    "homepage_url": {
+        "ja": "https://cybozudev.zendesk.com/hc/ja/articles/205831710",
+        "en": "https://developer.kintone.io/hc/en-us/articles/209064437"
+    },
+    "desktop": {
+        "js": ["https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js",
+              "https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js",
+              "js/desktop.js"],
+        "css": ["css/desktop.css"]
+    },
+    "config": {
+        "js": ["https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js",
+                "https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js",
+                "https://js.cybozu.com/jsrender/1.0.0-beta/jsrender.min.js",
+                "js/config.js"],
+        "css": ["css/config.css",
+                "css/51-us-default.css"
+               ],
+        "html": "html/config.html",
+        "required_params": ["cf_domain",
+                            "cf_client_name",
+                            "_oauth_client_secret:zendesk",
+                            "cf_search_field",
+                            "cf_search_property",
+                            "cf_result_set_display_field"
+                         ]
+    }
+}

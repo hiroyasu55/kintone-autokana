@@ -1,0 +1,41 @@
+{
+    "manifest_version": 1,
+    "version": 1,
+    "type": "APP",
+    "name": {
+        "ja": "Dropbox for kintone",
+        "en": "Dropbox for kintone"
+    },
+    "description": {
+        "ja": "Simple, secure sharing from anywhere",
+        "en": "Simple, secure sharing from anywhere"
+    },
+    "icon": "image/icon.png",
+    "homepage_url": {
+        "ja": "https://cybozudev.zendesk.com/hc/ja/articles/204887010",
+        "en": "https://cybozudev.zendesk.com/hc/ja/articles/204887010"
+    },
+    "desktop": {
+        "js": [
+            "js/jquery.min.js",
+            "js/jsrender.min.js",
+            "js/desktop.js"
+        ],
+        "css": [
+            "css/desktop.css"
+        ]
+    },
+    "config": {
+        "html": "html/config.html",
+        "js": [
+            "js/jquery.min.js",
+            "js/jsrender.min.js",
+            "js/config.js"
+        ],       
+        "css": [
+            "css/51-us-default.css",
+            "css/original.css"
+        ],
+        "required_params":["sharedLinkField","displaySpaceField"]
+    }
+}

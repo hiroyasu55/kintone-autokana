@@ -1,0 +1,52 @@
+{
+  "manifest_version": 1,
+  "version": 1,
+  "type": "APP",
+  "name": {
+    "ja": "漢字かな変換プラグイン",
+    "en": "Change Japanese Kanji to Kana plugin"
+  },
+  "description": {
+    "ja": "入力された漢字を自動的にひらがな・カタカナに変換します。",
+    "en": "Inputed Kanji characters are changed to Kana automated."
+  },
+  "icon": "image/icon.png",
+  "homepage_url": {
+    "ja": "http://www.logicheart.biz",
+    "en": "http://www.logicheart.biz"
+  },
+  "desktop": {
+    "js": [
+      "https://js.cybozu.com/jquery/1.11.3/jquery.min.js",
+      "https://js.cybozu.com/jqueryui/1.11.4/jquery-ui.min.js",
+      "js/jquery.autoKana.js",
+      "js/customize.js"
+    ],
+    "css": [
+      "https://js.cybozu.com/jqueryui/1.11.4/themes/smoothness/jquery-ui.css",
+      "css/customize.css"
+    ]
+  },
+  "mobile": {
+    "js": [
+      "https://js.cybozu.com/jquery/1.11.3/jquery.min.js",
+      "https://js.cybozu.com/jqueryui/1.11.4/jquery-ui.min.js",
+      "js/jquery.autokana.js",
+      "js/mobile-customize.js"
+    ]
+  },
+  "config": {
+    "html": "html/config.html",
+    "js": [
+      "https://js.cybozu.com/jquery/1.11.3/jquery.min.js",
+      "https://js.cybozu.com/jqueryui/1.11.4/jquery-ui.min.js",
+      "js/config.js"
+    ],
+    "css": [
+      "https://js.cybozu.com/jqueryui/1.11.4/themes/smoothness/jquery-ui.css",
+      "stylesheet/51-jp-default.css",
+      "css/config.css"
+    ],
+    "required_params": ["kanji_field", "kana_field"]
+  }
+}

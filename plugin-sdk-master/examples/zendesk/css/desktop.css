@@ -1,0 +1,66 @@
+.zendesk_ticket_status_label {
+  padding: 1px 4px 2px 4px;
+  font-size: 12px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  webkit-border-radius: 3px;
+  background: #EEE;
+  color: #A0A0A0;
+  text-transform: lowercase;
+  min-height: 14px;
+  font-weight: normal;
+}
+
+.zendesk_ticket_status_label.compact {
+  opacity: 0.6;
+  padding: 0px;
+  display: block;
+  width: 15px;
+  text-align: center;
+  font-size: 9px;
+  line-height: 13px;
+}
+
+.zendesk_ticket_status_label.new {
+  background: #f5ca00;
+  color: #fff;
+}
+
+.zendesk_ticket_status_label.open {
+  background: #e82a2a;
+  color: #fff;
+}
+
+.zendesk_ticket_status_label.pending {
+  background: #59bbe0;
+  color: #fff;
+}
+
+.zendesk_ticket_status_label.hold {
+  background: #000;
+  color: #fff;
+}
+
+.zendesk_ticket_status_label.solved {
+  background: #828282;
+  color: #fff;
+}
+
+.zendesk_ticket_status_label.closed {
+  background: #ddd;
+  color: #fff;
+}
+
+.zendeskPlugin-desktop-resultSet-pagenation-cybozu > a.disabled {
+  color: #7f7f7f;
+  font-style: nornal;
+  text-decoration: none;
+  cursor: default;
+}
+
+.zendeskPlugin-desktop-resultSet-pagenation-cybozu .prev,
+.zendeskPlugin-desktop-resultSet-pagenation-cybozu .next {
+  margin: 0px 2px;
+  padding: 0px 2px;
+}
+

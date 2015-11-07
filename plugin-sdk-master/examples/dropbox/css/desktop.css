@@ -1,0 +1,22 @@
+[class^="dropbox-plugin-"],
+[class*=" dropbox-plugin-"] {
+    white-space: nowrap;
+}
+
+[class^="dropbox-plugin-"] .input-constraints-cybozu,
+[class*=" dropbox-plugin-"] .input-constraints-cybozu {
+    display: block;
+    white-space: pre-wrap;
+}
+
+.dropbox-plugin-edit-button {
+    margin-top: 5px;
+}
+
+.lt-ie9 .dropbox-plugin-edit-button {
+    display: none;
+}
+
+.dropbox-plugin-chooser-outer {
+    margin: 10px 0 5px;
+}

@@ -1,0 +1,40 @@
+{
+    "manifest_version": 1,
+    "version": 5,
+    "type": "APP",
+    "name": {
+        "ja": "Box for kintone",
+        "en": "Box for kintone",
+        "zh": "Box for kintone"
+    },
+    "description": {
+        "ja": "Simple, secure sharing from anywhere",
+        "en": "Simple, secure sharing from anywhere",
+        "zh": "Simple, secure sharing from anywhere"
+    },
+    "icon": "image/icon.png",
+    "homepage_url": {
+        "ja": "https://r.cybozu.com/plugin/ja/box.html",
+        "en": "https://r.cybozu.com/plugin/en/box.html"
+    },
+    "desktop": {
+        "js": [
+            "js/jquery.min.js",
+            "js/jsrender.min.js",
+            "js/desktop.js"
+        ]
+    },
+    "config": {
+        "html": "html/config.html",
+        "js": [
+            "js/jquery.min.js",
+            "js/jsrender.min.js",
+            "js/config.js"
+        ],
+        "css": [
+            "css/config.css",
+            "css/51-us-default.css"
+        ],
+        "required_params": ["folderId", "keyFld", "boxUrl", "access"]
+    }
+}
