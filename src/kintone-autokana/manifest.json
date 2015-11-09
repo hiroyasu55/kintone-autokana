@@ -12,27 +12,27 @@
   },
   "icon": "image/icon.png",
   "homepage_url": {
-    "ja": "http://www.logicheart.biz",
-    "en": "http://www.logicheart.biz"
+    "ja": "https://github.com/logicheart/kintonte-autokana",
+    "en": "https://github.com/logicheart/kintonte-autokana"
   },
   "desktop": {
     "js": [
       "https://js.cybozu.com/jquery/1.11.3/jquery.min.js",
       "https://js.cybozu.com/jqueryui/1.11.4/jquery-ui.min.js",
       "js/jquery.autoKana.js",
-      "js/customize.js"
+      "js/plugin.js"
     ],
     "css": [
       "https://js.cybozu.com/jqueryui/1.11.4/themes/smoothness/jquery-ui.css",
-      "css/customize.css"
+      "css/plugin.css"
     ]
   },
   "mobile": {
     "js": [
       "https://js.cybozu.com/jquery/1.11.3/jquery.min.js",
       "https://js.cybozu.com/jqueryui/1.11.4/jquery-ui.min.js",
-      "js/jquery.autokana.js",
-      "js/mobile-customize.js"
+      "js/jquery.autoKana.js",
+      "js/plugin.js"
     ]
   },
   "config": {
@@ -44,9 +44,8 @@
     ],
     "css": [
       "https://js.cybozu.com/jqueryui/1.11.4/themes/smoothness/jquery-ui.css",
-      "stylesheet/51-jp-default.css",
       "css/config.css"
     ],
-    "required_params": ["kanji_field", "kana_field"]
+    "required_params": ["kanji_label", "kana_label"]
   }
 }
