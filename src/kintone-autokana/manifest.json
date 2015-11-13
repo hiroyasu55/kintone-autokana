@@ -46,6 +46,6 @@
       "https://js.cybozu.com/jqueryui/1.11.4/themes/smoothness/jquery-ui.css",
       "css/config.css"
     ],
-    "required_params": ["kanji_label", "kana_label"]
+    "required_params": ["kanji_label_0", "kana_label_0"]
   }
 }

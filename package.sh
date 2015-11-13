@@ -9,9 +9,12 @@ fi
 OPTION=$1
 SRC_DIR=$BASE_DIR/src
 PACKAGE_DIR=$SRC_DIR/$PACKAGE_NAME
+MANIFEST_FILE=$PACKAGE_DIR/manifest.json
 SDK_DIR=$BASE_DIR/plugin-sdk-master
 PLUGIN_FILE=$SDK_DIR/plugins/*/plugin.zip
 RELEASE_DIR=$BASE_DIR/release
+
+version=$(grep '"version":' $MANIFEST_FILE | awk '{print $2}' | sed -e 's/,$//')
 
 cd $SRC_DIR
 pwd
@@ -32,6 +35,6 @@ fi
 cd $BASE_DIR
 
 if [ "$OPTION" == "release" ] ; then
-  cp $PLUGIN_FILE $RELEASE_DIR/$PACKAGE_NAME.zip
-  echo "[Package:release]"
+  cp $PLUGIN_FILE ${RELEASE_DIR}/${PACKAGE_NAME}_v${version}.zip
+  echo "[Package:release v${version}]"
 fi
