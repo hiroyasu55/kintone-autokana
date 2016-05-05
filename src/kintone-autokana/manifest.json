@@ -1,10 +1,10 @@
 {
   "manifest_version": 1,
-  "version": 1,
+  "version": 2,
   "type": "APP",
   "name": {
-    "ja": "漢字かな変換プラグイン",
-    "en": "Change Japanese Kanji to Kana plugin"
+    "ja": "漢字かな変換プラグイン ver.1.2",
+    "en": "Change Japanese Kanji to Kana plugin version 1.2"
   },
   "description": {
     "ja": "入力された漢字を自動的にひらがな・カタカナに変換します。",

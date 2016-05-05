@@ -2,8 +2,23 @@
 
   "use strict";
 
+  function findInputByLabel(label) {
+    var element = null;
+    $('span.control-label-text-gaia').each(function(i, span) {
+      if ($(span).text() !== label) return;
+      var control_gaia = $(span).closest('.control-gaia');
+      var input = control_gaia.find('input[type="text"]');
+      if (!input) {
+        console.warn("[autokana]no input");
+        return;
+      }
+      element = input;
+    });
+    return element;
+  }
+
   kintone.events.on(
-    ['app.record.create.show', 'app.record.edit.show'],
+    ['app.record.create.show', 'app.record.edit.show', 'moblie.app.record.create.show', 'mobile.app.record.edit.show'],
     function(event) {
       var config = kintone.plugin.app.getConfig(PLUGIN_ID);
       if (!config) return;
@@ -22,25 +37,9 @@
         katakana: false
       };
 
-      //console.log("[autokana]"+config.kanji_label+"->"+config.kana_label);
       $.fn.autoKana(kanji_input, kana_input, options);
     }
   );
 
-  function findInputByLabel(label) {
-    console.log("[autokana]label="+label);
-    var element = null;
-    $('span.control-label-text-gaia').each(function(i, span) {
-      if ($(span).text() !== label) return;
-      var control_gaia = $(span).closest('.control-gaia');
-      var input = control_gaia.find('input[type="text"]');
-      if (!input) {
-        console.warn("[autokana]no input");
-        return;
-      }
-      element = input;
-    });
-    return element;
-  }
 
 })(kintone.$PLUGIN_ID);
