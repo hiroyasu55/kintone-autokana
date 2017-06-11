@@ -1,0 +1,3 @@
+[submodule "modules/plugin-sdk"]
+	path = modules/plugin-sdk
+	url = https://github.com/kintone/plugin-sdk.git

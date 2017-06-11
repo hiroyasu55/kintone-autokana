@@ -1,0 +1,50 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "$": false,
+    "kintone": false
+  },
+  "parserOptions": {
+    "sourceType": "module",
+  },
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "no-console": [
+      "off"
+    ],
+    "no-control-regex": [
+      "off"
+    ],
+    "no-empty": [
+      "warn"
+    ],
+    "no-unused-vars": [
+      "warn"
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "semi": [
+      "warn",
+      "always"
+    ]
+  }
+}
