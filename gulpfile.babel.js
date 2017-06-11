@@ -4,12 +4,13 @@
 
 'use strict';
 
-const gulp = require('gulp');
-const util = require('gulp-util');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
-const child = require('child_process');
-const fs = require('fs-extra');
+import gulp from 'gulp';
+//import util from 'gulp-util';
+//import source from 'vinyl-source-stream';
+import child from 'child_process';
+import fs from 'fs-extra';
+import webpack from 'gulp-webpack';
+import config from './webpack.config.babel.js';
 
 const path = {
   SRC_DIR: './src/',
@@ -102,33 +103,11 @@ let readManifestFile = (manifestFile) => {
   }
 };
 
-// plugin.js
-gulp.task('plugin.js', () => {
+// js
+gulp.task('js', () => {
   fs.mkdirsSync(path.PLUGIN_DIR);
-  browserify({
-    entries: [path.SRC_DIR + 'js/plugin.js'],
-    extensions: ['.js'],
-    debug: true
-  }).on('error', (err) => {
-    console.log(util.colors.red('ERROR! \n' + err.message));
-    this.emit('end');
-  }).bundle()
-    .pipe(source('plugin.js'))
-    .pipe(gulp.dest(path.PLUGIN_DIR + 'js/'));
-});
-
-// config.js
-gulp.task('config.js', () => {
-  fs.mkdirsSync(path.PLUGIN_DIR);
-  browserify({
-    entries: [path.SRC_DIR + 'js/config.js'],
-    extensions: ['.js'],
-    debug: true
-  }).on('error', (err) => {
-    console.log(util.colors.red('ERROR! \n' + err.message));
-    this.emit('end');
-  }).bundle()
-    .pipe(source('config.js'))
+  gulp.src(path.SRC_DIR + 'js/config.js')
+    .pipe(webpack(config))
     .pipe(gulp.dest(path.PLUGIN_DIR + 'js/'));
 });
 
@@ -208,13 +187,12 @@ gulp.task('package-release', ['package'], () => {
 
 // default
 gulp.task('default', [
-  'plugin.js', 'config.js', 'html', 'css', 'img', 'manifest'
+  'js', 'html', 'css', 'img', 'manifest'
 ]);
 
 // watch
 gulp.task('watch', () => {
-  gulp.watch([path.SRC_DIR + 'js/plugin.js', path.SRC_DIR + 'lib/**/*.js'], ['plugin.js']);
-  gulp.watch([path.SRC_DIR + 'js/config.js', path.SRC_DIR + 'lib/**/*.js'], ['config.js']);
+  gulp.watch([path.SRC_DIR + 'js/*.js', path.SRC_DIR + 'lib/**/*.js'], ['js']);
   gulp.watch([path.SRC_DIR + 'html/*.html'], ['html']);
   gulp.watch([path.SRC_DIR + 'css/*.css'], ['css']);
   gulp.watch([

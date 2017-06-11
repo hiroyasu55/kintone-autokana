@@ -14,9 +14,9 @@
     "sourceType": "module",
   },
   "rules": {
-    "comma-dangle": [
+    "camelcase": [
       "error",
-      "never"
+      {"properties": "always"}
     ],
     "indent": [
       "error",

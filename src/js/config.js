@@ -1,48 +1,79 @@
-(function(PLUGIN_ID) {
-  'use strict';
+/**
+ * config.js
+ */
 
-  var kUtil = require('../../lib/node-kintone-util');
+import kUtil from 'node-kintone-util';
+const MAX_INPUTS = 4;
 
-  kUtil.getPreviewForm(kUtil.getId()).then(function (resp) {
-    $.each(resp.properties, function(i, prop) {
+let app = (PLUGIN_ID) => {
+  let config = kUtil.getPluginConfig(PLUGIN_ID);
+  if (!config) {
+    config = {};
+  }
+  if (!config.pairs) {
+    config.pairs = [];
+    for (let i = 0; i < MAX_INPUTS; i++) {
+      config.pairs.push({'kanji': '', 'kana': ''});
+    }
+  }
+
+  kUtil.getPreviewForm(kUtil.getId()).then((resp) => {
+    for (let prop of resp.properties) {
       if (prop.type === 'SINGLE_LINE_TEXT') {
-        $('#kanji_label_0').append($('<option/>').text(prop.label).val(prop.label));
-        $('#kana_label_0').append($('<option/>').text(prop.label).val(prop.label));
+        for (let i = 0; i < MAX_INPUTS; i++) {
+          let kanjiSelect = $('select[name="kanji_label_' + i + '"]');
+          if (!kanjiSelect) {
+            console.warn('select[name="kanji_label_' + i + '"] not exists');
+          } else {
+            kanjiSelect.append($('<option/>').text(prop.label).val(prop.label));
+            kanjiSelect.val(config.pairs[i].kanji);
+          }
+          let kanaSelect = $('select[name="kana_label_' + i + '"]');
+          if (!kanaSelect) {
+            console.warn('select[name="kana_label_' + i + '"] not exists');
+          } else {
+            kanaSelect.append($('<option/>').text(prop.label).val(prop.label));
+            kanjiSelect.val(config.pairs[i].kana);
+          }
+        }
       }
-    });
-    var conf = kUtil.getPluginConfig(PLUGIN_ID);
+    }
     //console.log('[autokana]conf:'+JSON.stringify(conf));
-    if (conf) {
-      $('#kanji_label_0').val(conf['kanji_label_0']);
-      $('#kana_label_0').val(conf['kana_label_0']);
-    }
   });
 
-  $('#submit').click(function() {
-    var kanji_label = $('#kanji_label_0').val();
-    var kana_label = $('#kana_label_0').val();
+  $('#submit').on('click', () => {
+    for (let i = 0; i < MAX_INPUTS; i++) {
+      let kanjiLabel = $('select[name="kanji_label_' + i);
+      let kanaLabel = $('select[name="kana_label_' + i);
+      if (!kanjiLabel || !kanaLabel) {
+        continue;
+      }
+      if (kanjiLabel.val() !== '' && kanaLabel.val() === '') {
+        alert('漢字フィールド' + (i + 1) + 'が選択されていません。');
+        return;
+      }
+      if (kanjiLabel.val() !== '' && kanaLabel.val() === '') {
+        alert('かなフィールド' + (i + 1) + 'が選択されていません。');
+        return;
+      }
+      if (kanjiLabel.val() === kanaLabel.val()) {
+        alert('漢字フィールドとかなフィールドは同一にはできません。');
+        return;
+      }
+      config.pairs[i] = {
+        kanji: kanjiLabel.val(),
+        kana: kanaLabel.val(),
+      };
 
-    if (kanji_label === '') {
-      alert('漢字フィールドが選択されていません。');
-      return;
-    }
-    if (kana_label === '') {
-      alert('かなフィールドが選択されていません。');
-      return;
-    }
-    if (kanji_label === kana_label) {
-      alert('漢字フィールドとかなフィールドは同一にはできません。');
-      return;
     }
 
-    var config = {
-      kanji_label_0: kanji_label,
-      kana_label_0: kana_label
-    };
     kintone.plugin.app.setConfig(config);
+    console.log('config:'+JSON.stringify(config));
   });
 
-  $('#cancel').click(function() {
+  $('#cancel').on('click', () => {
     history.back();
   });
-})(kintone.$PLUGIN_ID);
+};
+
+app(kintone.$PLUGIN_ID);
